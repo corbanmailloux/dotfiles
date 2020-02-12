@@ -1,2 +1,6 @@
 - link:
     ~/.hammerspoon: .hammerspoon
+    ~/.gitignore_global: .gitignore_global
+
+- shell:
+  - [git config --global core.excludesfile ~/.gitignore_global, Setting up global .gitignore]

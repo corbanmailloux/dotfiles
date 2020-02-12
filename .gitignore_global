@@ -1,1 +1,13 @@
-.DS_Store
+# Mac stuff
+*.DS_Store
+
+# Work stuff
+.idea/
+.ruby-gemset
+.ruby-version
+.tags
+.tags*
+coverage/
+.rakeTasks
+.generators
+.rspec_status

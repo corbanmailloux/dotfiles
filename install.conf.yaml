@@ -1,6 +1,9 @@
 - link:
     ~/.hammerspoon: .hammerspoon
     ~/.gitignore_global: .gitignore_global
+    ~/.config/karabiner/karabiner.json:
+        create: true
+        path: karabiner.json
 
 - shell:
   - [git config --global core.excludesfile ~/.gitignore_global, Setting up global .gitignore]

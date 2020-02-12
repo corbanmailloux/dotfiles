@@ -25,6 +25,13 @@ end
 
 hs.hotkey.bind(hyper, "C", openChrome)
 
+-- Media controls
+hs.hotkey.bind(
+  hyper, "P", function()
+    hs.spotify.displayCurrentTrack()
+  end
+)
+
 --- Testing / Playground
 hs.hotkey.bind(
   hyper, "W", function()

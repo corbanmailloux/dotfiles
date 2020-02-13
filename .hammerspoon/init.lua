@@ -19,11 +19,19 @@ spoon.MiroWindowsManager:bindHotkeys({
 })
 
 -- Application quick switch
-local function openChrome()
-  hs.application.launchOrFocus("Google Chrome")
-end
+-- C for Chrome, T for iTerm
 
-hs.hotkey.bind(hyper, "C", openChrome)
+hs.hotkey.bind(
+  hyper, "C", function()
+    hs.application.launchOrFocus("Google Chrome")
+  end
+)
+
+hs.hotkey.bind(
+  hyper, "T", function()
+    hs.application.launchOrFocus("iTerm")
+  end
+)
 
 -- Media controls
 hs.hotkey.bind(

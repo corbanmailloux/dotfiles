@@ -40,6 +40,12 @@ hs.hotkey.bind(
   end
 )
 
+hs.hotkey.bind(
+  hyper, "Z", function()
+    hs.application.launchOrFocus("zoom.us")
+  end
+)
+
 -- Media controls
 hs.hotkey.bind(
   hyper, "P", function()

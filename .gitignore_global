@@ -11,3 +11,4 @@ coverage/
 .rakeTasks
 .generators
 .rspec_status
+*.iml

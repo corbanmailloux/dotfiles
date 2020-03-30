@@ -12,3 +12,4 @@ coverage/
 .generators
 .rspec_status
 *.iml
+.java-version

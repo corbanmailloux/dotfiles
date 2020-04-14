@@ -46,6 +46,12 @@ hs.hotkey.bind(
   end
 )
 
+hs.hotkey.bind(
+  hyper, "A", function()
+    hs.application.launchOrFocus("Authy Desktop")
+  end
+)
+
 -- Media controls
 hs.hotkey.bind(
   hyper, "P", function()

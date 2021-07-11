@@ -52,6 +52,12 @@ hs.hotkey.bind(
   end
 )
 
+hs.hotkey.bind(
+  hyper, "`", function()
+    hs.application.launchOrFocus("Home Assistant")
+  end
+)
+
 -- Media controls
 hs.hotkey.bind(
   hyper, "P", function()

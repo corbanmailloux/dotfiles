@@ -77,3 +77,17 @@ hs.hotkey.bind(
     hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
   end
 )
+
+-- Home Assistant:
+-- I've moved my Home Assistant hotkeys into Alfred workflows for now, but I'm leaving this here for reference.
+-- headers = {}
+-- headers["Authorization"] = "Bearer FAKE"
+-- headers["Content-Type"] = "application/json"
+
+-- -- Toggle the left desk lamp
+-- hs.hotkey.bind(
+--   hyper, "1", function()
+--     data = '{"entity_id": "light.plant_lamp"}'
+--     hs.http.post("https://<HOME_ASSISTANT_URL>/api/services/light/toggle", data, headers)
+--   end
+-- )

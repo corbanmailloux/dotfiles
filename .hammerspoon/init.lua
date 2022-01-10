@@ -19,7 +19,7 @@ spoon.MiroWindowsManager:bindHotkeys({
 })
 
 -- Application quick switch
--- C for Chrome, T for iTerm, S for Slack
+-- C for Chrome, T for iTerm, S for Slack, A for Authy, Z for Zoom, X for Messages
 -- TODO: Maybe move these to hyper + number keys? It would be easier to type, but maybe harder to remember.
 
 hs.hotkey.bind(
@@ -55,6 +55,12 @@ hs.hotkey.bind(
 hs.hotkey.bind(
   hyper, "`", function()
     hs.application.launchOrFocus("Home Assistant")
+  end
+)
+
+hs.hotkey.bind(
+  hyper, "X", function()
+    hs.application.launchOrFocus("Messages")
   end
 )
 

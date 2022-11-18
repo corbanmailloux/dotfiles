@@ -2,8 +2,10 @@
     ~/.hammerspoon: .hammerspoon
     ~/.gitignore_global: .gitignore_global
     ~/.config/karabiner/karabiner.json:
-        create: true
-        path: karabiner.json
+      create: true
+      path: karabiner.json
 
 - shell:
   - [git config --global core.excludesfile ~/.gitignore_global, Setting up global .gitignore]
+  - [defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/dotfiles/iterm2/", Update iTerm2 preferences directory]
+  - [defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true, Tell iTerm2 to use the custom preferences in the directory]

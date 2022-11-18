@@ -13,3 +13,5 @@ coverage/
 .rspec_status
 *.iml
 .java-version
+Microsoft API Logger
+sgtnclient_d.log

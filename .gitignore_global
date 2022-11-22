@@ -3,8 +3,8 @@
 
 # Work stuff
 .idea/
-.ruby-gemset
-.ruby-version
+# .ruby-gemset
+# .ruby-version
 .tags
 .tags*
 coverage/

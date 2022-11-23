@@ -4,6 +4,8 @@
     ~/.config/karabiner/karabiner.json:
       create: true
       path: karabiner.json
+    ~/.pryrc:
+      path: .pryrc
 
 - shell:
   - [git config --global core.excludesfile ~/.gitignore_global, Setting up global .gitignore]

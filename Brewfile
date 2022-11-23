@@ -25,6 +25,7 @@ brew "kubectx"
 brew "mysql@5.7", link: true
 brew "p7zip"
 brew "parallel"
+brew "python3"
 brew "redis", restart_service: true
 brew "ripgrep"
 brew "tfenv"
@@ -49,3 +50,4 @@ cask "pritunl"
 cask "sequel-pro"
 cask "shottr"
 cask "swiftbar"
+cask "visual-studio-code"

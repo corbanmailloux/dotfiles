@@ -64,19 +64,19 @@ hs.hotkey.bind(
   end
 )
 
--- Media controls
-hs.hotkey.bind(
-  hyper, "P", function()
-    hs.spotify.displayCurrentTrack()
-  end
-)
+-- -- Media controls
+-- hs.hotkey.bind(
+--   hyper, "P", function()
+--     hs.spotify.displayCurrentTrack()
+--   end
+-- )
 
---- Testing / Playground
-hs.hotkey.bind(
-  hyper, "W", function()
-    hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
-  end
-)
+-- --- Testing / Playground
+-- hs.hotkey.bind(
+--   hyper, "W", function()
+--     hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
+--   end
+-- )
 
 -- Home Assistant:
 -- I've moved my Home Assistant hotkeys into Alfred workflows for now, but I'm leaving this here for reference.

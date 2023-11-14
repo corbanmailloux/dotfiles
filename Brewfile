@@ -1,5 +1,6 @@
 tap "wavefrontHQ/wavefront" # Work
 brew "awscli"
+brew "bat"
 brew "coreutils"
 brew "docker-credential-helper-ecr", link: false # Work
 brew "docker-machine-driver-vmware" # Work

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# 1. Check if a filename was provided
+if [ -z "$1" ]; then
+    echo "Usage: optimize_image <filename>"
+    exit 1
+fi
+
+INPUT="$1"
+
+# 2. Prepare the clean filename
+FILENAME_NO_EXT="${INPUT%.*}"
+CLEAN_NAME=$(echo "$FILENAME_NO_EXT" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+OUTPUT="${CLEAN_NAME}.webp"
+
+# 3. Check for existing file to prevent accidental overwrite
+if [ -f "$OUTPUT" ]; then
+    read -p "File '$OUTPUT' already exists. Overwrite? (y/n): " CONFIRM
+    if [[ ! "$CONFIRM" =~ ^[Yy]$ ]]; then
+        echo "Aborted."
+        exit 1
+    fi
+fi
+
+# 4. Run the optimization
+magick "$INPUT" -resize "1200x>" -strip -quality 75 "$OUTPUT"
+
+echo "Success! Created: $OUTPUT"

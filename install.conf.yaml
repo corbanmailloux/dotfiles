@@ -1,6 +1,9 @@
 - plugins:
     - dotbot-brew/
 
+- brewfile:
+    - Brewfile
+
 - defaults:
     link:
       create: true
@@ -9,18 +12,31 @@
 - link:
     ~/.hammerspoon: hammerspoon
     ~/.gitignore_global: gitignore_global
+    ~/.gitconfig: gitconfig
+    ~/.zshrc:
+      backup: true
+      path: zshrc
     ~/.config/karabiner/karabiner.json:
+      # Karabiner doesn't follow symlinks, so the link gets overwritten on change.
       force: true
       backup: true
       path: karabiner.json
     ~/bin: bin
 
-- brewfile:
-    - Brewfile
-
 - shell:
-  - [git config --global core.excludesfile ~/.gitignore_global, Setting up global .gitignore]
-  - [defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/dotfiles/iterm2/", Update iTerm2 preferences directory]
-  - [defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true, Tell iTerm2 to use the custom preferences in the directory]
-  - [defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true, Don't write .DS_Store files on network volumes]
-  - [defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true, Don't write .DS_Store files on USB volumes]
+    - [
+        defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/dotfiles/iterm2/",
+        Update iTerm2 preferences directory,
+      ]
+    - [
+        defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true,
+        Tell iTerm2 to use the custom preferences in the directory,
+      ]
+    - [
+        defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true,
+        Don't write .DS_Store files on network volumes,
+      ]
+    - [
+        defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true,
+        Don't write .DS_Store files on USB volumes,
+      ]

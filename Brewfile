@@ -17,15 +17,24 @@ brew "python"
 brew "watch"
 brew "wget"
 brew "yt-dlp"
+brew "zsh"
+brew "pure" # Prompt for ZSH
+brew "zsh-syntax-highlighting" # Syntax highlighting for ZSH
+brew "zsh-autosuggestions" # Fish-like autosuggestions for ZSH
+brew "zoxide"
+brew "fzf"
 
 cask "alfred"
 cask "audacity"
 cask "balenaetcher"
 cask "db-browser-for-sqlite"
 cask "grandperspective"
+cask "hammerspoon"
 cask "inkscape"
 cask "insomnium"
 cask "keka"
+cask "iterm2"
+cask "font-jetbrains-mono"
 
 vscode "esphome.esphome-vscode"
 vscode "euskadi31.json-pretty-printer"

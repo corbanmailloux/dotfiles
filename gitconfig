@@ -1,0 +1,12 @@
+[core]
+	excludesfile = /Users/corban/.gitignore_global
+[user]
+	name = Corban Mailloux
+	email = git@corb.co
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[alias]
+	st = status
+	co = checkout

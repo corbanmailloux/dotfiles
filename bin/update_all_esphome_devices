@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+# Mount. Prompt for password if needed.
+open 'smb://hassio@homeassistant.local/config'
+sleep 5
+cd ~/Projects/hass/config/esphome
+
+# Update the mounted config
+rsync -avh /Volumes/config/ ~/Projects/hass/config/ --delete --exclude '.git' --exclude 'tts' --exclude 'custom_components' --exclude 'esphome/.esphome'
+
+# Update esphome
+brew upgrade esphome
+
+# Loop through each YAML file and prompt for confirmation before updating
+for file in *.yaml; do
+    if [[ "$file" != "secrets.yaml" ]]; then
+        echo -n "Do you want to update the device defined in $file? (Y/n) "
+        read REPLY
+        echo    # Move to a new line after the user input
+        if [[ $REPLY =~ ^[Nn]$ ]]; then
+            echo "Skipped $file."
+        else
+            esphome run --no-logs "$file"
+        fi
+    fi
+done
+
+# # Prompt for confirmation before updating ALL devices
+# echo -n "Do you want to update ALL devices? (Y/n) "
+# read REPLY
+# echo    # Move to a new line after the user input
+# if [[ $REPLY =~ ^[Yy]$ ]]; then
+#     esphome run --no-logs `find . -maxdepth 1 -type f -name '*.yaml' ! -name 'secrets.yaml' -exec printf "%s " {} +`
+# else
+#     echo "Update canceled."
+# fi

@@ -35,6 +35,12 @@
                     }
                 ]
             },
+            "fn_function_keys": [
+                {
+                    "from": { "key_code": "f6" },
+                    "to": [{ "software_function": { "iokit_power_management_sleep_system": {} } }]
+                }
+            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": {

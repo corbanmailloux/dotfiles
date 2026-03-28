@@ -2,8 +2,6 @@
 
 Uses [DotBot](https://github.com/anishathalye/dotbot).
 
-## References
-
 ### Terminal Setup
 
 - iTerm2: https://iterm2.com/
@@ -12,3 +10,9 @@ Uses [DotBot](https://github.com/anishathalye/dotbot).
 - Plugins:
   - https://github.com/zsh-users/zsh-syntax-highlighting
   - https://github.com/zsh-users/zsh-autosuggestions
+
+### TODO (Things Not Integrated)
+- SSH config
+- ~/.zprofile
+- Alfred configs
+- Configuring the ~/Projects directory?

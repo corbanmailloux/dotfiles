@@ -3,8 +3,9 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export HOMEBREW_NO_ENV_HINTS=1
 
 export HISTFILE=~/.zsh_history
-export HISTSIZE=50000
-export SAVEHIST=50000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
 
 export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
@@ -41,6 +42,8 @@ compinit
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
+setopt autocd # Allow moving to directories without `cd`
+
 # Use pure prompt: https://github.com/sindresorhus/pure
 autoload -U promptinit; promptinit
 prompt pure
@@ -48,7 +51,7 @@ prompt pure
 #### ZSH plugins
 eval "$(zoxide init zsh)"
 source <(fzf --zsh) # Set up fzf key bindings and fuzzy completion
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Must be last.
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Must be last.
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

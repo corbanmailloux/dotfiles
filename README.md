@@ -11,7 +11,11 @@ Uses [DotBot](https://github.com/anishathalye/dotbot).
   - https://github.com/zsh-users/zsh-syntax-highlighting
   - https://github.com/zsh-users/zsh-autosuggestions
 
+Until very recently, I was using oh-my-zsh with the robbyrussell theme. I may go back to that, but trying this out for a bit as I wasn't using very many plugins anyways.
+See `zshrc` for the manually configured version.
+
 ### TODO (Things Not Integrated)
+
 - SSH config
 - ~/.zprofile
 - Alfred configs

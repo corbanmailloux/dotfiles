@@ -1,12 +1,20 @@
 #!/bin/zsh
 
-# Mount. Prompt for password if needed.
-open 'smb://hassio@homeassistant.local/config'
-sleep 5
-cd ~/Projects/hass/config/esphome
+# Mount Home Assistant config, sync it to local, and update all ESPHome devices.
 
-# Update the mounted config
-rsync -avh /Volumes/config/ ~/Projects/hass/config/ --delete --exclude '.git' --exclude 'tts' --exclude 'custom_components' --exclude 'esphome/.esphome'
+# Mount Home Assistant config if not already mounted
+MOUNT_POINT="/Volumes/config"
+LOCAL_CONFIG="$HOME/Projects/hass/config"
+
+if ! mount | grep -q "$MOUNT_POINT"; then
+    echo "Mounting Home Assistant config..."
+    open 'smb://hassio@homeassistant.local/config'
+    sleep 5
+fi
+
+cd "$LOCAL_CONFIG/esphome"
+
+rsync -avh "$MOUNT_POINT/" "$LOCAL_CONFIG" --delete --exclude '.git' --exclude 'tts' --exclude 'custom_components' --exclude 'esphome/.esphome'
 
 # Update esphome
 brew upgrade esphome

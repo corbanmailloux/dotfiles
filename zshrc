@@ -1,10 +1,14 @@
 #### Environment variables
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH" # asdf version manager
+export PATH="$PATH:$HOME/.lmstudio/bin" # LM Studio CLI tools
+
 export HOMEBREW_NO_ENV_HINTS=1
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
+setopt HIST_IGNORE_ALL_DUPS
 setopt EXTENDED_HISTORY
 
 export LS_COLORS='di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
@@ -23,6 +27,11 @@ alias ls='ls -hG' # Enable colorized output for ls, and human-readable file size
 alias l='ls -alh' # Human-readable long listing format, including hidden files
 alias rm='rm -i' # Prompt before deleting files
 
+alias edit-zsh='code ${HOME}/.zshrc'
+alias reload-zsh='source ${HOME}/.zshrc'
+
+alias update_esphome='source ${HOME}/bin/update_all_esphome_devices'
+
 #### Completions System
 # Add Homebrew's completions to the lookup path (FPATH)
 if type brew &>/dev/null; then
@@ -34,6 +43,10 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Enable auto-completion of options for aliases
 setopt COMPLETE_ALIASES
+
+# Add asdf completions to the lookup path (FPATH)
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 autoload -Uz compinit
 compinit
 
@@ -41,6 +54,10 @@ compinit
 # Use opt-left and opt-right to move by word, especially for auto-suggestions.
 bindkey "[D" backward-word
 bindkey "[C" forward-word
+
+# Bind up/down to search history starting with typed text
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
 setopt autocd # Allow moving to directories without `cd`
 

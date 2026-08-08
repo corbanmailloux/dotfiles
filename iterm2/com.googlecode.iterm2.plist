@@ -21,9 +21,9 @@
 	<key>AboutToPasteTabsWithCancel_selection</key>
 	<integer>2</integer>
 	<key>AiMaxTokens</key>
-	<integer>400000</integer>
+	<integer>1050000</integer>
 	<key>AiModel</key>
-	<string>gpt-5.2</string>
+	<string>gpt-5.5</string>
 	<key>AiResponseMaxTokens</key>
 	<integer>128000</integer>
 	<key>AitermURL</key>
@@ -833,13 +833,13 @@
 		<key>0xd-0x20000-0x24</key>
 		<dict>
 			<key>Action</key>
-			<integer>11</integer>
+			<integer>10</integer>
 			<key>Apply Mode</key>
 			<integer>0</integer>
 			<key>Escaping</key>
 			<integer>2</integer>
 			<key>Text</key>
-			<string>16 0a</string>
+			<string>[13;2u</string>
 			<key>Version</key>
 			<integer>2</integer>
 		</dict>
@@ -1945,13 +1945,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>f</string>
-				</dict>
-				<key>0xf728-0x0</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x4</string>
 				</dict>
 				<key>0xf728-0x80000</key>
 				<dict>

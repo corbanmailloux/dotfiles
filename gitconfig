@@ -7,6 +7,8 @@
 	prune = true
 [pull]
 	rebase = false
+[push]
+	autoSetupRemote = true
 [alias]
 	st = status
 	co = checkout

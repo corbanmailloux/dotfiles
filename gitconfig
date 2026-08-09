@@ -12,3 +12,13 @@
 [alias]
 	st = status
 	co = checkout
+
+	# Ref: https://haacked.com/archive/2025/04/17/git-gone/
+	# Get default branch
+	default = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+    # Get list of branches that have been deleted on the remote
+	gone = "!git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads/ | awk '$2 == \"[gone]\" { print $1 }'"
+	up = "!git pull --rebase --prune $@ && git submodule update --init --recursive"
+	bclean = "!git gone | xargs -r git branch -D"
+    # Switches to specified branch (or the default branch if no branch is specified), runs git up, then runs bclean.
+    bdone = "!f() { DEFAULT=$(git default); git checkout ${1-$DEFAULT} && git up && git bclean; }; f"

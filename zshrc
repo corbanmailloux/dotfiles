@@ -32,6 +32,11 @@ alias reload-zsh='source ${HOME}/.zshrc'
 
 alias update_esphome='source ${HOME}/bin/update_all_esphome_devices'
 
+# mkcd: Make a directory and cd into it
+mkcd () {
+  mkdir -p "$1" && cd "$1"
+}
+
 #### Completions System
 # Add Homebrew's completions to the lookup path (FPATH)
 if type brew &>/dev/null; then

@@ -37,6 +37,18 @@ mkcd () {
   mkdir -p "$1" && cd "$1"
 }
 
+# boop: Play a happy sound if the previous command succeeded, a sad sound otherwise.
+# Usage: <command> ; boop
+boop () {
+  local last="$?"
+  if [[ "$last" == '0' ]]; then
+    afplay /System/Library/Sounds/Blow.aiff
+  else
+    afplay /System/Library/Sounds/Sosumi.aiff
+  fi
+  $(exit "$last")
+}
+
 #### Completions System
 # Add Homebrew's completions to the lookup path (FPATH)
 if type brew &>/dev/null; then
